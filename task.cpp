@@ -28,7 +28,42 @@ void ex1()
     std::cout << "Result :" << result << std::endl;
 }
 
-// Function for excercise 2
+// Functions for excercise 2
+void ex2Recursion(int n, int k = 0)
+{
+    if (k == n)
+    {
+        return;
+    }
+
+    for (int i = 0; i <= k; ++i)
+    {
+        std::cout << " ";
+    }
+    for (int i = 0; i < n - k; ++i)
+    {
+        std::cout << "*";
+    }
+    std::cout << std::endl;
+    ex2Recursion(n, k + 1);
+}
+
+
+void ex2()
+{
+    int n;
+    std::cout << "Input n (even): ";
+    std::cin >> n;
+
+    if (n % 2 == 0)
+    {
+        ex2Recursion(n);
+    }
+    else
+    {
+        std::cout << "Error: n is not even" << std::endl;
+    }
+}
 
 
 int main()
@@ -37,7 +72,7 @@ int main()
     ex1();
 
     // Excercise 2
-    // ex2();
+    ex2();
 
     return 0;
 }
